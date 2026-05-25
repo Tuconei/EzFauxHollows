@@ -34,7 +34,7 @@ public sealed class FauxHollowsPlugin : IDalamudPlugin {
         // Interface.UiBuilder.OnBuildUi -= UiBuilder_OnBuildUi_DebugUI;
     }
 
-    private Task gameTask;
+    private Task? gameTask;
     private readonly Tile[] gameState = new Tile[36];
 
     private void FrameworkPuzzlePoll(IFramework framework) {

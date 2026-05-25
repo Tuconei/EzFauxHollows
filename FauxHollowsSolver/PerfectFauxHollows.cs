@@ -32,9 +32,9 @@ public sealed class PerfectFauxHollows {
         var foundBoxChest = false;
         var foundCommander = false;
 
-        int[] knownSwords = null;
-        int[] knownBoxChest = null;
-        int[] knownCommander = null;
+        int[]? knownSwords = null;
+        int[]? knownBoxChest = null;
+        int[]? knownCommander = null;
 
         var possibleSwords = new List<int[]>();
         var possibleBoxChests = new List<int[]>();
@@ -167,9 +167,9 @@ public sealed class PerfectFauxHollows {
 
         // Sum up the count of possibles where a known is not already present
         foreach (var rect in possibleSwords.Concat(possibleBoxChests).Concat(possibleCommanders)) {
-            if (foundSwords && knownSwords.Intersect(rect).Any() ||
-                foundBoxChest && knownBoxChest.Intersect(rect).Any() ||
-                foundCommander && knownCommander.Intersect(rect).Any())
+            if (foundSwords && knownSwords!.Intersect(rect).Any() ||
+                foundBoxChest && knownBoxChest!.Intersect(rect).Any() ||
+                foundCommander && knownCommander!.Intersect(rect).Any())
                 continue;
 
             foreach (var i in rect)
